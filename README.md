@@ -79,9 +79,13 @@ Follow these steps to set up the project:
 ## Project Structure
 
 ├── images/ # Directory where images from the PDF are stored
+
 ├── tables/ # Directory where extracted tables will be saved
+
 ├── Table.csv # Output CSV file containing the extracted table data
+
 ├── script.py # Main script for extracting tables and performing OCR
+
 └── README.md # This README file
 
 ## Acknowledgments
