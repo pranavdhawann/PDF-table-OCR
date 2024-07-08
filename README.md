@@ -1,88 +1,62 @@
-# pdf-table-ocr
+# Table Detection and Extraction from PDF
 
-A tool for extracting tables from PDF documents, performing OCR, and saving the tables as CSV files.
+This repository contains a project for detecting and extracting tables from PDF documents. The process involves converting PDF pages to images, detecting tables and table structures, performing OCR on table cells, and saving the extracted tables as CSV files.
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Installation](#installation)
+- [Features](#features)
+- [Requirements](#requirements)
 - [Usage](#usage)
-  - [Requirements](#requirements)
-  - [Running the Script](#running-the-script)
 - [Project Structure](#project-structure)
-- [Acknowledgments](#acknowledgments)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-## Overview
+## Features
 
-This project automates the extraction of tables from PDF documents and converts them into CSV files using a series of steps:
+- Convert PDF pages to images
+- Detect tables and table structures using pretrained models
+- Crop and extract detected tables
+- Perform OCR on table cells
+- Save extracted tables as CSV files
+  
+## Requirements
 
-1. **PDF to Image Conversion**: Converts PDF pages to images using `pdf2image`.
-2. **Table Detection**: Detects tables in images with Hugging Face's `AutoModelForObjectDetection`.
-3. **Table Cropping**: Crops detected tables from images.
-4. **Structure Recognition**: Identifies table structure using `TableTransformerForObjectDetection`.
-5. **OCR Processing**: Extracts text from table cells with EasyOCR.
-6. **CSV Export**: Compiles extracted table data and saves it as CSV files.
+- Python 3.x
+- Google Colab (for running the code)
+- Required Python packages:
+  - transformers
+  - easyocr
+  - pdf2image
+  - torch
+  - torchvision
+  - matplotlib
+  - numpy
+  - pandas
+  - tabulate
+    
+## Usage
 
-The project leverages PyTorch, torchvision, PIL, pdf2image, and other libraries to achieve seamless integration and processing.
+1. Install required packages:
 
-## Installation
-
-Follow these steps to set up the project:
-
-1. Clone the Repository:
-   ```bash
-   git clone https://github.com/pranavdhawann/pdf-table-ocr.git
-   cd pdf-table-ocr
-   ```
-2. Install the required packages:
     ```bash
     !pip install transformers easyocr pdf2image
     !apt-get install poppler-utils
     ```
-    
-## Usage
 
-### Requirements
+2. Update `config.json` with your file paths:
 
-1. transformers==4.30.2
-2. torch==2.0.1
-3. torchvision==0.15.2
-4. Pillow==9.5.0
-5. pdf2image==1.16.3
-6. huggingface-hub==0.15.1
-7. matplotlib==3.7.1
-8. numpy==1.24.4
-9. tqdm==4.65.0
-10. easyocr==1.7.0
-11. tabulate==0.9.0
-12. pandas==2.0.3
-
-### Running the Script
-
-1. **Set Up Paths**:
-    ```python
-    pdf_path = '' 
-    images_path = '/content/images'
-    csv_path = '/content/Table.csv'
-    tables_path = '/content/tables'
+    ```json
+    {
+      "pdf_path": "",
+      "csv_path": "",
+      "images_path": "",
+      "tables_path": ""
+    }
     ```
-
-2. **Prepare Directories**:
-    ```bash
-    !mkdir /content/images
-    !mkdir /content/tables
-    ```
-
-3. **Run the rest**
-    
+        
 ## Project Structure
 
-├── images/ # Directory where images from the PDF are stored
-
-├── tables/ # Directory where extracted tables will be saved
-
-├── Table.csv # Output CSV file containing the extracted table data
+├── tables/ # Directory where extracted images and tables will be saved
 
 ├── script.py # Main script for extracting tables and performing OCR
 
