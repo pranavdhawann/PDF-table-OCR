@@ -1,6 +1,6 @@
 # Table Detection and Extraction from PDF
 
-This repository contains a project for detecting and extracting tables from PDF documents. The process involves converting PDF pages to images, detecting tables and table structures, performing OCR on table cells, and saving the extracted tables as CSV files.
+Detect and Extract tables from PDF documents and save to .csv file.
 
 ## Table of Contents
 
