@@ -2,14 +2,6 @@
 
 Extract tables from PDF documents and save the results as CSV files. The Google Colab notebook combines PDF rendering, Microsoft Table Transformer models, table-structure detection, and EasyOCR.
 
-## PDF workflow
-
-These repositories cover three complementary stages:
-
-1. [PDF2IMAGE](https://github.com/pranavdhawann/PDF2IMAGE) converts PDF pages to images.
-2. [PDF-table-OCR](https://github.com/pranavdhawann/PDF-table-OCR) detects, crops, and OCRs tables into CSV files.
-3. [PDFInsightBot](https://github.com/pranavdhawann/PDFInsightBot) indexes PDF text locally and supports question answering with Ollama.
-
 Use this project when the important content is structured data inside PDF tables.
 
 ## Features
